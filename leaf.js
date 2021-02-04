@@ -10,12 +10,12 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(mymap);
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
-// var circle = L.circle([51.508, -0.11], {
-//     color: 'red',
-//     fillColor: '#f03',
-//     fillOpacity: 0.5,
-//     radius: 500
-// }).addTo(mymap);
+var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mymap);
 
 // var polygon = L.polygon([
 //     [51.509, -0.08],
@@ -40,5 +40,16 @@ var marker = L.marker([51.5, -0.09]).addTo(mymap);
 //         .setContent("You clicked the map at " + e.latlng.toString())
 //       .openOn(mymap);
 // }
+
+var myIcon = L.icon({
+    iconUrl: 'my-icon.png',
+    iconSize: [38, 95],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowUrl: 'my-icon-shadow.png',
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+    });
+    L.marker([50.505, 30.57], {icon: myIcon}).addTo(map);
 
 mymap.on('click', onMapClick);
